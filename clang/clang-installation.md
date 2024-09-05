@@ -3,7 +3,7 @@
 ## Основная информация
 
 Официальный сайт: [apt.llvm.org](https://apt.llvm.org/) (section `Automatic installation script`)
-
+Не забыть добавить `clangd` в `--slave`, если он используется.
 
 ## Установка
 
@@ -22,9 +22,12 @@ cd ./clang
 curl -O https://apt.llvm.org/llvm.sh # or wget
 chmod +x llvm.sh
 sudo ./llvm.sh -${CLANG_VERSION}
+sudo apt-get install clangd-${CLANG_VERSION} clang-tidy-${CLANG_VERSION}
 sudo apt-get autoremove
 sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-${CLANG_VERSION} ${CLANG_VERSION} \
-  --slave /usr/bin/clang++ clang++ /usr/bin/clang++-${CLANG_VERSION}
+  --slave /usr/bin/clang++ clang++ /usr/bin/clang++-${CLANG_VERSION} \
+  --slave /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-${CLANG_VERSION}
+
 sudo update-alternatives --display clang
 ```
 
