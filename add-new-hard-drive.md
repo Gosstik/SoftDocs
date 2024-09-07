@@ -49,7 +49,7 @@ sudo resize2fs /dev/sda3
 # df -h
 ```
 
-# How to add sdb
+### How to add sdb
 
 Handy commands:
 
@@ -66,37 +66,37 @@ sudo blkid  # UUID for permanent mount
 
 2) Run:
 
-```bash
-sudo mkdir /mnt/sdb1
-```
+    ```bash
+    sudo mkdir /mnt/sdb1
+    ```
 
 3) Create a file system on sdb1 (it will generate `UUID`):
 
-```bash
-sudo mkfs.ext4 /dev/sdb1
-```
+    ```bash
+    sudo mkfs.ext4 /dev/sdb1
+    ```
 
 4) Get `UUID` by running:
 
-```bash
-sudo lsblk /dev/sdb1
-```
+    ```bash
+    sudo lsblk /dev/sdb1
+    ```
 
 5) Add information to `/etc/fstab`:
 
-```text
-# sdb1 (win100gb)
-# UUID=6d397792-5c1a-404e-b2eb-8f54d84ab0ff     /home/ownstreamer/win100gb      ext4    uid=ownstreamer,gid=ownstreamer 0       2
-/dev/sdb1     /home/ownstreamer/win100gb      ext4    defaults 0       2
-```
+    ```text
+    # sdb1 (win100gb)
+    # UUID=6d397792-5c1a-404e-b2eb-8f54d84ab0ff     /home/ownstreamer/win100gb      ext4    uid=ownstreamer,gid=ownstreamer 0       2
+    /dev/sdb1     /home/ownstreamer/win100gb      ext4    defaults 0       2
+    ```
 
 6) Check that everything works:
 
-```bash
-sudo mount -a
-sudo mount /dev/sdb1  # slightly command
-sudo umount /dev/sdb1  # to unmount
-```
+    ```bash
+    sudo mount -a
+    sudo mount /dev/sdb1  # slightly command
+    sudo umount /dev/sdb1  # to unmount
+    ```
 
 7) Change permissions:
 
