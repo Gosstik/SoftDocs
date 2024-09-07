@@ -268,7 +268,7 @@ sudo fdisk -l
 
 ```text
 Disk /dev/nvme0n1: 476.94 GiB, 512110190592 bytes, 1000215216 sectors
-Disk model: SAMSUNG MZVLB512HBJQ-000H1              
+Disk model: SAMSUNG MZVLB512HBJQ-000H1
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
@@ -317,7 +317,7 @@ grub-install --target x86_64-efi /dev/nvmr0n1 # device --- disk, where "EFI Syst
   - Зайти в терминал и выполнить
 
 ```bash
-# Next line is required only if /etc/fstab 
+# Next line is required only if /etc/fstab
 #sudo mount # grub-install searches for EFI in /boot/efi by default
 sudo grub-install
 sudo update-grub
@@ -458,7 +458,7 @@ sudo apt-get clean && sudo apt-get autoremove && sudo reboot
   - **deja dup**: только обычные файлы
   - **rsync**: [askubuntu.com](https://askubuntu.com/a/2634)
   - **TimeShift**: [askubuntu.com](https://askubuntu.com/a/1376066/1900253), [instruction: www.linuxtechi.com](https://www.linuxtechi.com/timeshift-backup-restore-ubuntu-linux/)
-  
+
 Бекап `Ubuntu` **ОБЯЗАТЕЛЬНО** делать на `ext4`. Большинство встроенных утилит работает только с этой ФС. Если нужно сделать бекап на `NTFS`, то для этого нужно использовать `tar` (иначе не будут сохраняться права на файл, его владельцы и прочее). Поэтому сделаем отдельный раздел с `ext4`, на который будем переносить данные.
 
 На всякий случай, опишем резервное копирование с помощью `tar`:

@@ -13,11 +13,13 @@ Instruction, how to convert pre-allocated disk to sparsed: [link](https://www.ho
 Quick guide:
 
 * Option 1: use `gparted` **with UI** as in this instruction: [youtube](https://www.youtube.com/watch?v=kTEsbS1FbUU). Installation:
+
 ```bash
 sudo apt-get install gparted -y
 ```
 
 * Option 2: manual expansion:
+
 ```bash
 sudo fdisk /dev/sda
 
@@ -50,33 +52,38 @@ sudo resize2fs /dev/sda3
 # How to add sdb
 
 Handy commands:
+
 ```bash
 sudo lsblk
-df -hT	# info about mount points
-sudo fdisk -l	# create partition
-sudo parted -l	# similar to `fdisk` util
-cat /etc/fstab	# permanent mount
-sudo blkid	# UUID for permanent mount
+df -hT  # info about mount points
+sudo fdisk -l  # create partition
+sudo parted -l  # similar to `fdisk` util
+cat /etc/fstab  # permanent mount
+sudo blkid  # UUID for permanent mount
 ```
 
 1) There is a device `/dev/sdb`. Firstly, we have to partition it (use `fdisk`): [https://phoenixnap.com](https://phoenixnap.com/kb/linux-create-partition)
 
 2) Run:
+
 ```bash
 sudo mkdir /mnt/sdb1
 ```
 
 3) Create a file system on sdb1 (it will generate `UUID`):
+
 ```bash
 sudo mkfs.ext4 /dev/sdb1
 ```
 
 4) Get `UUID` by running:
+
 ```bash
 sudo lsblk /dev/sdb1
 ```
 
 5) Add information to `/etc/fstab`:
+
 ```text
 # sdb1 (win100gb)
 # UUID=6d397792-5c1a-404e-b2eb-8f54d84ab0ff     /home/ownstreamer/win100gb      ext4    uid=ownstreamer,gid=ownstreamer 0       2
@@ -84,31 +91,36 @@ sudo lsblk /dev/sdb1
 ```
 
 6) Check that everything works:
+
 ```bash
 sudo mount -a
-sudo mount /dev/sdb1	# slightly command
-sudo umount /dev/sdb1	# to unmount
+sudo mount /dev/sdb1  # slightly command
+sudo umount /dev/sdb1  # to unmount
 ```
 
 7) Change permissions:
+
 ```bash
 sudo chown -R ownstreamer:ownstreamer win100gb/
 ```
 
 ### Handy
+
 ```bash
 sudo apt-get install udisks2 # manage USB and hard drives
 ```
 
-- mount --bind in fstab: [link](https://serverfault.com/questions/613179/how-do-i-do-mount-bind-in-etc-fstab)
+* mount --bind in fstab: [link](https://serverfault.com/questions/613179/how-do-i-do-mount-bind-in-etc-fstab)
 
-- mount windows disk C (read-only mode): https://askubuntu.com/questions/145902/unable-to-mount-windows-ntfs-filesystem-due-to-hibernation. Quick solution:
+* mount windows disk C (read-only mode): <https://askubuntu.com/questions/145902/unable-to-mount-windows-ntfs-filesystem-due-to-hibernation>. Quick solution:
+
 ```bash
 sudo mkdir /mnt/Windows/C
 sudo mount -t ntfs -o ro /dev/nvme0n1p3 /mnt/Windows/C
 ```
 
-- /etc/fstab for Windows disks:
+* /etc/fstab for Windows disks:
+
 ```text
 #####################################
 # Partitions
@@ -126,5 +138,4 @@ sudo mount -t ntfs -o ro /dev/nvme0n1p3 /mnt/Windows/C
 /dev/nvme0n1p5 /mnt/Windows/E ntfs defaults 0 2
 ####################################
 ```
-
 
