@@ -49,14 +49,23 @@ sudo update-alternatives --auto <name>
 ```
 
 
+### Удалить alternatives
+
+```bash
+sudo update-alternatives --remove gcc /usr/bin/gcc-11
+sudo update-alternatives --remove-all gcc
+```
+
+
 ### Добавить новый alternatives
 
 * Ссылка с объяснением: [link](https://documentation.suse.com/ru-ru/sles/15-SP3/html/SLES-all/cha-update-alternative.html#sec-ua-install)
 
 ```bash
 sudo update-alternatives --install <link> <name> <path> <priority> [--slave <link> <name> <path>]...
-# sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 13 \ 
+# sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 13 \
 # --slave /usr/bin/g++ g++ /usr/bin/g++-13
 ```
 
 * Slave позволяет при переключении `master` на альтернативу переключать и всех `slaves`.
+
