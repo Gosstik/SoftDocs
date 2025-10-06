@@ -1,0 +1,521 @@
+{
+  //// Default profile
+
+  //////////////////////////////////////////////////////////////////////////////
+  //// Appearance
+  //////////////////////////////////////////////////////////////////////////////
+
+  ////----------------------------------------------------------------------////
+  //// Main UI stuff
+  ////----------------------------------------------------------------------////
+
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.tree.renderIndentGuides": "onHover",
+  // "workbench.activityBar.visible": false,
+  // "workbench.statusBar.visible": false,
+  // "explorer.openEditors.visible": 0,
+  "workbench.list.openMode": "doubleClick",
+  "workbench.tree.expandMode": "doubleClick",
+
+  //// Fix for create new profile
+  "workbench.experimental.enableNewProfilesUI": true,
+
+  //// Remove `History restored` note from terminal
+  // "terminal.integrated.persistentSessionReviveProcess": "never",
+  // "terminal.integrated.enablePersistentSessions": false
+
+  //// Icon theme
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.folders.theme": "classic",
+
+  "workbench.colorCustomizations": {
+    // "editorWarning.foreground": "#ffff0f",
+  },
+
+  ////----------------------------------------------------------------------////
+  //// Files
+  ////----------------------------------------------------------------------////
+
+  "files.autoSave": "onWindowChange",
+  "files.autoSaveDelay": 5000,
+  "files.exclude": {
+    // which files not to show in explorer
+    "**/.DS_Store": false
+  },
+  "files.defaultLanguage": "markdown",
+
+  ////----------------------------------------------------------------------////
+  //// Terminal
+  ////----------------------------------------------------------------------////
+
+  "terminal.integrated.mouseWheelZoom": true,
+  "terminal.integrated.cursorBlinking": true,
+
+  ////----------------------------------------------------------------------////
+  //// Editor
+  ////----------------------------------------------------------------------////
+
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.fontSize": 13,
+  "editor.rulers": [ 80 ],
+  "editor.accessibilitySupport": "off", // just optimization
+  "editor.mouseWheelZoom": true,
+  // "editor.wordWrap": "on", // torn on only for specific files
+  "editor.wrappingIndent": "deepIndent",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.minimap.enabled": false,
+  "editor.linkedEditing": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+  "editor.bracketPairColorization.enabled": false,
+  "editor.inlayHints.enabled": "off",
+
+  ////----------------------------------------------------------------------////
+  //// Other
+  ////----------------------------------------------------------------------////
+
+  "pasteImage.showFilePathConfirmInputBox": true,
+
+  //// Trailing spaces extension
+  "trailing-spaces.highlightCurrentLine": false,
+  // "trailing-spaces.liveMatching": false, // to speed up editor
+
+  //// Non ASCII symbols
+  // "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  // "editor.unicodeHighlight.nonBasicASCII": false,
+  // "editor.unicodeHighlight.allowedCharacters": {
+  // },
+
+  "workbench.list.defaultFindMode": "highlight",
+
+  //// Errors highlighting
+  "errorLens.exclude": [ "Unknown word", ],
+  "errorLens.messageBackgroundMode": "message",
+  "errorLens.messageMaxChars": 100,
+
+  "search.collapseResults": "alwaysExpand",
+
+  //////////////////////////////////////////////////////////////////////////////
+  //// Tools and utilities
+  //////////////////////////////////////////////////////////////////////////////
+
+  ////----------------------------------------------------------------------////
+  //// Docker
+  ////----------------------------------------------------------------------////
+
+  "DockerRun.DisableAutoGenerateConfig": true,
+  "dev.containers.gitCredentialHelperConfigLocation": "none",
+  "dev.containers.copyGitConfig": false,
+  "docker.languageserver.diagnostics.instructionJSONInSingleQuotes": "error",
+
+  ////----------------------------------------------------------------------////
+  //// Copilot
+  ////----------------------------------------------------------------------////
+
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "github.copilot.chat.scopeSelection": true,
+  "github.copilot.chat.terminalChatLocation": "quickChat",
+  "inlineChat.mode": "preview",
+
+  ////----------------------------------------------------------------------////
+  //// GigaCode
+  ////----------------------------------------------------------------------////
+
+  "gigacode.common.predictByWord": true,
+  "gigacode.common.wholeLineReplacement": true,
+  "gigacode.common.wholeLineCompletion": false,
+
+  //////////////////////////////////////////////////////////////////////////////
+  //// Language specific
+  //////////////////////////////////////////////////////////////////////////////
+
+  ////----------------------------------------------------------------------////
+  //// Common
+  ////----------------------------------------------------------------------////
+
+  "cSpell.language": "en,ru",
+
+  //// Comments
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    // {
+    //   "tag": "//",
+    //   "color": "#474747",
+    //   "strikethrough": true,
+    //   "underline": false,
+    //   "backgroundColor": "transparent",
+    //   "bold": false,
+    //   "italic": false
+    // },
+    {
+      "tag": "//",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "##",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+
+  ////----------------------------------------------------------------------////
+  //// JSON
+  ////----------------------------------------------------------------------////
+
+  //// Prettier removing trailing comma: https://github.com/prettier/prettier/issues/15956
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // "editor.insertSpaces": true,
+    "editor.tabSize": 4, // does not work
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    // "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+  },
+  "json.format.keepLines": true,
+
+  ////----------------------------------------------------------------------////
+  //// Markdown
+  ////----------------------------------------------------------------------////
+
+  //// Config: https://github.com/DavidAnson/vscode-markdownlint#configure
+  "markdown.math.enabled": true,
+  "markdown.validate.enabled": true, // links check
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "markdown.extension.completion.enabled": true,
+  "markdown.extension.list.indentationSize": "inherit",
+  "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onSingleOrDoubleHash",
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "diffEditor.ignoreTrimWhitespace": true
+  },
+
+  //// Per MD config: https://github.com/DavidAnson/markdownlint/tree/v0.34.0/doc
+  "markdownlint.config": {
+    "default": true,
+    "MD001": false,
+    "MD003": {
+      "style": "atx"
+    },
+    "MD004": {
+      "style": "consistent"
+    },
+    "MD007": {
+      "indent": 2
+    },
+    "MD010": {
+      "spaces_per_tab": 2
+    },
+    "MD012": {
+      "maximum": 2
+    },
+    //// MD033, messing up with anything in angle brackets
+    "no-inline-html": false
+    // "no-hard-tabs": false, // MD010
+  },
+  "markdown-preview-enhanced.breakOnSingleNewLine": false,
+  "markdown-preview-enhanced.mermaidTheme": "dark",
+  // "workbench.editorAssociations": { },
+  "markdown-preview-enhanced.previewTheme": "monokai.css",
+  "markdown.extension.print.absoluteImgPath": false,
+  "shellformat.useEditorConfig": true,
+
+  ////----------------------------------------------------------------------////
+  //// C++
+  ////----------------------------------------------------------------------////
+
+  // "C_Cpp.intelliSenseEngine": "disabled",
+
+  // "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+  // "C_Cpp.codeAnalysis.updateDelay": 1000,
+  // "C_Cpp.default.compilerArgs": [
+  //   "-Wall",
+  //   "-Wextra",
+  //   "-Wpedantic",
+  //   "-Wshadow",
+  //   "-Werror"
+  // ],
+  // "C_Cpp.errorSquiggles": "enabled",
+  // "C_Cpp.inlayHints.parameterNames.hideLeadingUnderscores": false,
+
+  "clangd.checkUpdates": true,
+  "clangd.path": "/usr/bin/clangd",
+
+  //// CMake
+
+  "cmake.useCMakePresets": "never",
+  "cmake.allowCommentsInPresetsFile": true,
+  "cmake.languageSupport.enableFileAPI": true,
+  "cmake.showOptionsMovedNotification": false,
+
+  "cmake.buildDirectory": "${workspaceFolder}/vscode-build-${buildType}/${buildKit}",
+  "clangd.arguments": [
+    "-log=verbose",
+    "-pretty",
+    "-background-index",
+    "-compile-commands-dir=.clangd_cc"
+  ],
+  "cmake.copyCompileCommands": "${workspaceFolder}/.clangd_cc/compile_commands.json",
+
+  "cmake.installPrefix": "{workspaceFolder}/install",
+  "cmake.generator": "Ninja",
+
+  "cmake.automaticReconfigure": false,
+  "cmake.configureOnEdit": false,
+
+  "cmake.deleteBuildDirOnCleanConfigure": true,
+  "cmake.exportCompileCommandsFile": true,
+  "cmake.buildTask": true,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask",
+    "cmake.build"
+  ],
+
+  "cmake.configureSettings": {
+    "gtest_build_samples": "ON"
+  },
+
+  "cmake.options.statusBarVisibility": "compact",
+  "cmake.options.advanced": {
+    "configure": {
+      "projectStatusVisibility": "visible"
+    },
+    "variant": {
+      "statusBarVisibility": "compact",
+      "statusBarLength": 17
+    },
+    //// More on kits: https://github.com/microsoft/vscode-cmake-tools/blob/main/docs/kits.md
+    //// >Edit User-Local CMake Kits
+    //// cmake-tools-kits.json
+    "kit": {
+      "statusBarVisibility": "compact",
+      "statusBarLength": 17
+    },
+    "build": {
+      "statusBarVisibility": "icon",
+      "projectStatusVisibility": "visible"
+    },
+    "buildTarget": {
+      "statusBarVisibility": "compact",
+      "statusBarLength": 17
+    },
+    "debug": {
+      "statusBarVisibility": "visible",
+      "projectStatusVisibility": "visible"
+    },
+    "launchTarget": {
+      "statusBarVisibility": "compact",
+      "statusBarLength": 17
+    },
+    "launch": {
+      "statusBarVisibility": "visible",
+      "projectStatusVisibility": "visible"
+    },
+    "workflow": {
+      "statusBarVisibility": "hidden",
+      "projectStatusVisibility": "hidden"
+    },
+    "workflowPreset": {
+      "statusBarVisibility": "hidden",
+      "projectStatusVisibility": "hidden"
+    },
+    "packagePreset": {
+      "statusBarVisibility": "hidden",
+      "projectStatusVisibility": "hidden"
+    },
+    "cpack": {
+      "statusBarVisibility": "hidden",
+      "projectStatusVisibility": "hidden"
+    },
+    "ctest": {
+      "statusBarVisibility": "hidden",
+      "projectStatusVisibility": "hidden",
+      "statusBarLength": 17,
+      "color": true
+    }
+    // "testPreset": {
+    //     "statusBarVisibility": "visible", "icon", "compact", "hidden", "inherit",
+    //     "inheritDefault": "visible", "icon", "compact", "hidden",
+    //     "statusBarLength": 20
+    // },
+    // "folder": {
+    //     "statusBarVisibility": "visible", "icon", "compact", "hidden", "inherit",
+    //     "inheritDefault": "visible", "icon", "compact", "hidden",
+    //     "statusBarLength": 20,
+    //     "projectStatusVisibility": "visible", "hidden"
+    // },
+    // "configurePreset": {
+    //     "statusBarVisibility": "visible", "icon", "compact", "hidden", "inherit",
+    //     "inheritDefault": "visible", "icon", "compact", "hidden",
+    //     "statusBarLength": 20
+    // },
+    // "buildPreset": {
+    //     "statusBarVisibility": "visible", "icon", "compact", "hidden", "inherit",
+    //     "inheritDefault": "visible", "icon", "compact", "hidden",
+    //     "statusBarLength": 20
+    // },
+  },
+
+  //// TODO: create default variants
+  // "cmake.defaultVariants": {
+  //     "buildType": {
+  //         "default": "debug",
+  //         "description": "The build type.",
+  //         "choices": {
+  //             "debug": {
+  //                 "short": "Debug",
+  //                 "long": "Disable optimizations - include debug information.",
+  //                 "buildType": "Debug"
+  //             },
+  //             "release": {
+  //                 "short": "Release",
+  //                 "long": "Optimize for speed - exclude debug information.",
+  //                 "buildType": "Release"
+  //             },
+  //             "minsize": {
+  //                 "short": "MinSizeRel",
+  //                 "long": "Optimize for smallest binary size - exclude debug information.",
+  //                 "buildType": "MinSizeRel"
+  //             },
+  //             "reldeb": {
+  //                 "short": "RelWithDebInfo",
+  //                 "long": "Optimize for speed - include debug information.",
+  //                 "buildType": "RelWithDebInfo"
+  //             },
+  //             "unspecified": {
+  //                 "short": "Unspecified",
+  //                 "long": "Let CMake pick the default build type.",
+  //                 "buildType": "Unspecified"
+  //             }
+  //         }
+  //     }
+  // },
+
+  ////----------------------------------------------------------------------////
+  //// Python
+  ////----------------------------------------------------------------------////
+
+  "python.venvFolders": [ "/home/gostik/.cache/virtualenvs" ],
+
+  "ruff.lint.ignore": [ "F405", "F403" ],
+  "ruff.lineLength": 80,
+  "ruff.lint.args": [
+    // "--select=ALL",
+    "--select=E,F,W" // default: ["E4", "E7", "E9", "F"]
+    // "--per-file-ignores=**/__init__.py:F401"
+  ],
+
+  //// Ruff does not fully implemented pylint, so using missing features here
+  //// https://github.com/astral-sh/ruff/issues/970
+  "pylint.args": [
+    "--disable=all",
+    "--enable=E0110,E0203,E1111,E1128,E0701,E0705,E0111,E1003,E0712,E0242,E1141,E0401,E0240,E0239,E2511,E0243,E0244,E1507,E0311,E0313,E0312,E0310,E1139,E0306,E1126,E1127,E1144,E0238,E0236,E0113,E0307,E1130,E2501,E1201,E1200,E0202,E0119,E1125,E4702,E0211,E0611,E1120,E0301,E1134,E1133,E1701,E1102,E1129,E0702,E0710,E1124,E0114,E1121,E1123,E1143,E0633,E1136,E1137,E1131,E1138,E1135,E0601,W0223,W1402,W0221,W1114,W0237,W0201,W0141,W3601,W0311,W1506,W0143,W0124,W4903,W4904,W4905,W4902,W4901,W6001,W9017,W9018,W0601,W1307,W0236,W1116,W9021,W1306,W9015,W0126,W9006,W9011,W9012,W3101,W9016,W9013,W9014,W4701,W9005,W0233,W1115,W0714,W0239,W0105,W0641,W0407,W0715,W0128,W0621,W0244,W9008,W1503,W9010,W0642,W1507,W0222,W0240,W0231,W0717,W0644,W0632,W0631,W2301,W0101,W0238,W0614,W9019,W0246,W9020,W0125,W2602,W0149,W0716,C2503,C0204,C0203,C2001,C0200,C0209,C3401,C0104,C0403,C0327,C0325,C0302,C0328,C1803,C1802,C0207,C0401,C0402,R1716,R1727,R5601,R1712,R6103,R1713,R6101,R6102,R0401,R0801,R0204,R1726,R1709,R1708,R0903,R0901,R0902"
+    // "--enable=E0110,E0203,E1111,E1128,E0701,E0705,E0111,E1003,E0712,E0242,E1141,E0401,E0240,E0239,E2511,E0243,E0244,E1507,E0311,E0313,E0312,E0310,E1139,E0306,E1126,E1127,E1144,E0238,E0236,E0113,E0307,E1130,E2501,E1201,E1200,E0202,E0119,E1125,E4702,E1101,E0211,E0611,E1120,E0301,E1134,E1133,E1701,E1102,E1129,E0702,E0710,E1124,E0114,E1121,E1123,E1143,E0633,E1136,E1137,E1131,E1138,E1135,E0601,W0223,W1402,W0221,W1114,W0237,W0201,W0141,W3601,W0311,W1506,W0143,W0124,W4903,W4904,W4905,W4902,W4901,W6001,W9017,W9018,W0601,W1307,W0236,W1116,W9021,W1306,W9015,W0126,W9006,W9011,W9012,W3101,W9016,W9013,W9014,W4701,W9005,W0233,W1115,W0714,W0239,W0105,W0641,W0407,W0715,W0128,W0621,W0244,W9008,W1503,W9010,W0642,W1507,W0222,W0240,W0231,W0717,W0644,W0632,W0631,W2301,W0101,W0238,W0614,W9019,W0246,W9020,W0125,W2602,W0149,W0716,C2503,C0204,C0203,C2001,C0200,C0209,C3401,C0104,C0403,C0327,C0325,C0302,C0328,C1803,C1802,C0207,C0401,C0402,R1716,R1727,R5601,R1712,R6103,R1713,R6101,R6102,R0401,R0801,R0204,R1726,R1709,R1708,R0903,R0901,R0902",
+    // "--enable=F,E,W",
+    // "--enable=E1120",
+  ],
+  "pylint.lintOnChange": false,
+
+  ////----------------------------------------------------------------------////
+  //// HTML, JavaScript, TypeScript
+  ////----------------------------------------------------------------------////
+
+  "html.format.wrapLineLength": 80,
+  "html.format.wrapAttributes": "force",
+  "javascript.experimental.updateImportsOnPaste": true,
+  "typescript.experimental.updateImportsOnPaste": true,
+
+  ////----------------------------------------------------------------------////
+  //// Latex
+  ////----------------------------------------------------------------------////
+
+  //// https://mathjiajia.github.io/vscode-and-latex/
+
+  "[latex]": {
+    "editor.formatOnSave": false,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "same",
+  },
+  "latex-workshop.bibtex-format.trailingComma": true,
+  "latex-workshop.intellisense.update.aggressive.enabled": true,
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.autoClean.run": "onFailed",
+  "latex-workshop.latex.clean.subfolder.enabled": true,
+  "latex-workshop.latex.outDir": "%DIR%/pdf",
+  "latex-workshop.linting.chktex.enabled": false,
+  "latex-workshop.linting.chktex.exec.args": [
+    "-wall",
+    "-n22",
+    "-n30",
+    "-e16",
+    "-q",
+    "-n1",
+    "-n3",
+  ],
+  "latex-workshop.linting.run": "onType",
+  "latex-workshop.latex.build.forceRecipeUsage": false,
+
+  
+
+  ////----------------------------------------------------------------------////
+  //// Other
+  ////----------------------------------------------------------------------////
+
+  "gitlens.currentLine.enabled": false,
+  "gitlens.currentLine.pullRequests.enabled": false,
+}
+
