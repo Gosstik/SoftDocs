@@ -6,6 +6,7 @@ Git submodules docs: [git-scm.com](https://git-scm.com/book/ru/v2/%D0%98%D0%BD%D
 
 ```bash
 git add submodule <ssh_url> <folder_name>
+git submodule set-branch --branch master -- <folder_name>
 ```
 
 ### Install project with submodule
@@ -16,8 +17,7 @@ git clone --recurse-submodules <ssh_of_current_project>
 
 # Option 2
 git clone <ssh_of_current_project>
-git submodule init
-git submodule update
+git submodule update --init --remote --recursive --rebase
 ```
 
 ### Pull changes
@@ -27,7 +27,7 @@ git submodule update
 git pull --recurse-submodules
 
 # Option 2 (after git pull)
-git submodule update --init --recursive --merge
+git submodule update --init --remote --recursive --rebase
 ```
 
 ### Update submodules
@@ -49,6 +49,10 @@ git merge
 ```bash
 # Set config
 git config push.recurseSubmodules check
+
+# Add new commits from submodule
+git add <submodule_name>
+git commit -m "update <submodule_name>"
 
 # Option 1 (push with submodules)
 git push --recurse-submodules=on-demand
