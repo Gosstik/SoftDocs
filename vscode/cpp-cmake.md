@@ -1,6 +1,17 @@
 # Create new CMake project
 
-TODO
+### Extensions
+
+```text
+twxs.cmake
+josetr.cmake-language-support-vscode
+ms-vscode.cmake-tools
+cheshirekow.cmake-format
+go2sh.cmake-integration-vscode
+ms-vscode.makefile-tools
+```
+
+Change `settings.json`.
 
 ### New way
 
