@@ -42,12 +42,12 @@
 
 Информация о том, как диск поделён на разделы (с какого адреса они начинаются), хранится в самом первом загрузчике. Есть несколько стилей таблицы разделов жёстких дисков:
 
-- `MBR` --- устаревший, использовался в `BIOS`. Имеет много минусов. Например, может работать только с дисками размером до 2TB и имеет ограниченное количество (логических) разделов. Его единственное преимущество --- более широкая совместимость: работает и с `BIOS`, и с `UEFI`. При этом `BIOS` может работать только с `MBR`.
-- `GPT` --- новый, используется в `UEFI`. Имеет много преимуществ над `MBR`, но не умеет работать с `BIOS`.
+- `MBR` --- устаревший, использовался в `CMS`. Имеет много минусов. Например, может работать только с дисками размером до 2TB и имеет ограниченное количество (логических) разделов. Его единственное преимущество --- более широкая совместимость: работает и с `CMS`, и с `UEFI`. При этом `CMS` может работать только с `MBR`.
+- `GPT` --- новый, используется в `UEFI`. Имеет много преимуществ над `MBR`, но не умеет работать с `CMS`.
 
 Раньше диски разбивались на разделы с помощью `MBR`, при этом диск не мог быть больше 2 TB, а разделов не могло быть больше четырёх. При этом таблица разделов и первичный загрузчик помещались на первый сектор диска в `MBR`. А `GPT` позволяет использовать очень большие диски и помещает загрузчик на специальный раздел, а также позволяет создавать очень много разделов.
 
-Диск разбитый на разделы с помощью таблицы разделов `GPT` в первом секторе продолжает хранить `MBR` запись. Это делается для того, чтобы старые системы с `BIOS` могли использовать `GPT` диски.
+Диск, разбитый на разделы с помощью таблицы разделов `GPT`, в первом секторе продолжает хранить `MBR` запись. Это делается для того, чтобы старые системы с `BIOS` могли использовать `GPT` диски.
 
 `UEFI` не использует загрузчик из `MBR`, вместо этого используется загрузчик со специального раздела на диске, который отформатирован в `FAT32` и называется `ESP` или `EFI`. Обычно это файл `/efi/boot/bootx64.efi`.
 
@@ -67,8 +67,7 @@ The system partition is the disk partition that contains the operating system fo
 
 Для работы лучше всего использовать утилиту `GParted` (имеет GUI).
 
-Доступные запоминающие устройства (диски) доступны как блочные устройства в папке `/dev`. Чтобы
-получить к ним доступ, нужно примонтировать их себе в систему.
+Доступные запоминающие устройства (диски) доступны как блочные устройства в папке `/dev`. Чтобы получить к ним доступ, нужно примонтировать их себе в систему.
 
 Пояснение, что такое `NVMe` и `sda`: [www.quora.com](https://www.quora.com/I-have-a-new-laptop-My-disc-is-not-dev-sda-but-dev-nvmeOn1-Why-is-that). Если кратко:
 
@@ -91,13 +90,17 @@ The system partition is the disk partition that contains the operating system fo
 - `F2` (or `Fn+F2`) --- BIOS
 - `F12` --- Boot Menu
 
+`MSI`:
+
+- `Delete` --- BIOS
+- `F11` --- Boot Menu
 
 ## Dual boot installation
 
 **Important:**  After installation, find and save manuals with the model and technical specifications of the laptop in the driver folder.
 
 - `Windows 11` installation from USB Flash: [remontka.pro](https://remontka.pro/windows-11-install/)
-- `Ubuntu` installation near Windows: [opensource.com](https://opensource.com/article/18/5/dual-boot-linux)
+- `Ubuntu` installation next to Windows: [opensource.com](https://opensource.com/article/18/5/dual-boot-linux)
 - Full guide: [nix.ru](https://www.nix.ru/computer_hardware_news/hardware_news_viewer.html?id=210175)
 - Inside file `/etc/default/grub` change first block of variables (after `If your computer has multiple ...`) with the following:
 
