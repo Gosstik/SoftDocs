@@ -15,7 +15,7 @@
 Полный гайд:
 
 ```bash
-GCC_VERSION=13
+GCC_VERSION=14
 
 sudo apt-get install -y gcc-${GCC_VERSION} g++-${GCC_VERSION}
 sudo apt-get autoremove -y
