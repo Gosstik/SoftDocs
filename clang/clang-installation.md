@@ -16,18 +16,19 @@
 Полный гайд.
 
 ```bash
-CLANG_VERSION=19
+CLANG_VERSION=20
 
 mkdir -p clang && cd ./clang
+sudo apt-get install -y curl
 curl -O https://apt.llvm.org/llvm.sh # or wget
 chmod +x llvm.sh
 sudo ./llvm.sh -${CLANG_VERSION}
-sudo apt-get install \
+sudo apt-get install -y \
   clangd-${CLANG_VERSION} \
   clang-tidy-${CLANG_VERSION} \
   clang-format-${CLANG_VERSION}
 
-sudo apt-get autoremove
+sudo apt-get autoremove -y
 
 sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-${CLANG_VERSION} ${CLANG_VERSION} \
   --slave /usr/bin/clang++ clang++ /usr/bin/clang++-${CLANG_VERSION} \
@@ -61,7 +62,7 @@ sudo ln -s /usr/bin/clang++-${CLANG_VERSION} /usr/bin/clang++
 ### Ручная
 
 ```bash
-CLANG_VERSION=18
+CLANG_VERSION=20
 LLVM_KEYRING_PATH="/usr/share/keyrings/llvm-archive-keyring.gpg"
 LLVM_SOURCES_LIST_PATH="/etc/apt/sources.list.d/llvm-clang-$CLANG_VERSION.list"
 
