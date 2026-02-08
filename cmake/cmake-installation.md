@@ -7,15 +7,20 @@ Installation on ubuntu with `apt-add-repository`: [link](https://apt.kitware.com
 Short instruction:
 
 ```bash
-cd ./cmake
+mkdir cmake && cd ./cmake
+sudo apt-get install -y curl
+
 curl -O https://apt.kitware.com/kitware-archive.sh # or wget
 chmod +x kitware-archive.sh
 sudo ./kitware-archive.sh
 sudo apt-get update
-sudo apt-get install cmake
+sudo apt-get install -y cmake
+cmake --version
+
+cd ../ && rm -r cmake
 ```
 
-In case cmake version doesn't change --- delete cmake and install once again.
+In case cmake version doesn't change &mdash; delete cmake and install once again.
 
 
 ## Install (harder and flexible way, update-alternatives)
